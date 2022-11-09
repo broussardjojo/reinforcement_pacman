@@ -21,41 +21,48 @@
 
 def question2():
     answerDiscount = 0.9
-    answerNoise = 0.2
+    answerNoise = 0
     return answerDiscount, answerNoise
 
 def question3a():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    # Prefer the close exit (+1), risking the cliff (-10)
+    answerDiscount = 0.9
+    answerNoise = 0
+    answerLivingReward = -5
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question3b():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    # Prefer the close exit (+1), but avoiding the cliff (-10)
+    # High discount to encourage a short path, but allow randomness to discourage cliff
+    answerDiscount = .1
+    answerNoise = 0.1
+    answerLivingReward = 0
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question3c():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    # Prefer the distant exit (+10), risking the cliff (-10)
+    # High non-zero discount to prevent infinite loops but aim for distant exit
+    answerDiscount = .99
+    answerNoise = 0
+    answerLivingReward = 0
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question3d():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    # Prefer the distant exit (+10), avoiding the cliff (-10)
+    # High non-zero discount to aim for distant exit, noise to discourage cliffwalking
+    answerDiscount = 0.99
+    answerNoise = 0.3
+    answerLivingReward = 0
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question3e():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    answerDiscount = .99
+    answerNoise = .2
+    answerLivingReward = 10
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
